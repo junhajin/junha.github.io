@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>스터디그룹 만들기</title>
+<style>
+  /* 기본 스타일 */
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+  }
+  .container {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 20px;
+    border: 1px solid #dee2e6;
+    border-radius: 10px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  }
+  h2 {
+    color: #007bff;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  form {
+    margin-top: 20px;
+  }
+  .form-group {
+    margin-bottom: 20px;
+  }
+  .form-group label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #333;
+  }
+  /* 공통 입력 스타일 */
+  .form-group input[type="text"],
+  .form-group input[type="email"],
+  .form-group textarea {
+    width: 95%;
+    padding: 20px;
+    font-size: 16px;
+    border: 2px solid #dee2e6;
+    border-radius: 5px;
+    background-color: #e9ecef;
+  }
+  .form-group textarea {
+    resize: vertical;
+    height: 120px; /* 텍스트 영역의 초기 높이 설정 */
+  }
+  .form-group button {
+    width: 100%;
+    padding: 15px;
+    font-size: 18px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  .form-group button:hover {
+    background-color: #0056b3;
+    
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <h2>스터디그룹 만들기</h2>
+  <form action="#">
+    <div class="form-group">
+      <label for="name">주제:</label>
+      <input type="text" id="name" name="name" required>
+    </div>
+    <div class="form-group">
+      <label for="email">모집인원:</label>
+      <input type="email" id="email" name="email" required>
+    </div>
+    <div class="form-group">
+      <label for="subject">장소:</label>
+      <input type="text" id="subject" name="subject" required>
+    </div>
+    <div class="form-group">
+        <label for="contact">연락처:</label>
+        <input type="text" id="contact" name="contact" required>
+      </div>
+    <div class="form-group">
+      <label for="message">메시지:</label>
+      <textarea id="message" name="message" required></textarea>
+    </div>
+    <div class="form-group">
+      <button type="submit">신청하기</button>
+    </div>
+  </form>
+</div>
+
+</body>
+</html>

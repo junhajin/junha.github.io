@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>강의 평가</title>
+<style>
+  /* 기본 스타일 */
+  body {
+    font-family: 'Noto Sans KR', sans-serif; /* 폰트 변경 */
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa; /* 배경색 변경 */
+    color: #212529; /* 글자 색 변경 */
+  }
+  .container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #dee2e6; /* 테두리 색 변경 */
+    border-radius: 10px;
+    background-color: #ffffff; /* 컨테이너 배경색 변경 */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); /* 그림자 추가 */
+  }
+  .session {
+    margin-top: 20px;
+    border: 1px solid #dee2e6; /* 테두리 색 변경 */
+    border-radius: 10px;
+    padding: 10px;
+    background-color: #e9ecef; /* 세션 배경색 변경 */
+    cursor: pointer; /* 마우스 오버시 포인터 변경 */
+    position: relative;
+  }
+  h1, h2 {
+    text-align: center;
+    color: #007bff; /* 제목 색 변경 */
+  }
+  .session .selected-indicator {
+    display: none;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    color: #007bff;
+  }
+  .selected .selected-indicator {
+    display: block;
+  }
+  #saveButton {
+    display: block;
+    width: 50px;
+    padding: 10px;
+    font-size: 16px;
+    color: #ffffff;
+    background-color: #007bff; /* 저장 버튼 배경색 */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <h1>강의 평가</h1>
+  <div class="session" onclick="selectSession(this)">
+    <h2>너무 환상적인 수업이에요!</h2>
+    <div class="selected-indicator">✔</div>
+  </div>
+  <div class="session" onclick="selectSession(this)">
+    <h2>엄청 많은 도움을 주는 수업!</h2>
+    <div class="selected-indicator">✔</div>
+  </div>
+  <div class="session" onclick="selectSession(this)">
+    <h2>너무 환상적인 수업이에요!</h2>
+    <div class="selected-indicator">✔</div>
+  </div>
+  <div class="session" onclick="selectSession(this)">
+    <h2>엄청 많은 도움을 주는 수업!</h2>
+    <div class="selected-indicator">✔</div>
+  </div>
+  <div class="session" onclick="selectSession(this)">
+    <h2>너무 환상적인 수업이에요!</h2>
+    <div class="selected-indicator">✔</div>
+  </div>
+  <div class="session" onclick="selectSession(this)">
+    <h2>엄청 많은 도움을 주는 수업!</h2>
+    <div class="selected-indicator">✔</div>
+  </div>
+  <div class="session" onclick="selectSession(this)">
+    <h2>너무 환상적인 수업이에요!</h2>
+    <div class="selected-indicator">✔</div>
+  </div>
+  <div class="session" onclick="selectSession(this)">
+    <h2>엄청 많은 도움을 주는 수업!</h2>
+    <div class="selected-indicator">✔</div>
+  </div>
+  <!-- 추가 세션들을 필요한 만큼 반복합니다 -->
+</div>
+
+<a href="0.3.1.gangui.html" id="saveButton"> Save </a>
+
+<script>
+  function selectSession(element) {
+    var sessions = document.getElementsByClassName('session');
+    for (var i = 0; i < sessions.length; i++) {
+      sessions[i].classList.remove('selected');
+    }
+    element.classList.add('selected');
+  }
+
+  function goBack() {
+    window.history.back(); // 이전 페이지로 돌아가기
+  }
+</script>
+
+</body>
+</html>
