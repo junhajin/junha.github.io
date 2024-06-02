@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>강의 후기</title>
+    <style>
+        /* 스타일링을 위한 CSS */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            color: #343a40;
+            margin: 0;
+            padding: 0;
+        }
+        #container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
+            background-color: #ffffff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+        #searchInput {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            box-sizing: border-box;
+            border: 2px solid #007bff;
+            border-radius: 5px;
+        }
+        .courseBox {
+            border: 2px solid #007bff;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            text-align: left;
+            background-color: #ffffff;
+        }
+        h2 {
+            margin-top: 0;
+            color: #007bff;
+        }
+        p {
+            margin-bottom: 0;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        #reviewButtonContainer {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+        }
+        #reviewButtonContainer a {
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+<div id="container">
+    <!-- 검색 창 -->
+    <input type="text" id="searchInput" placeholder="강의를 검색하세요">
+
+    <div class="courseBox" id="course1">
+        <a href="0.3.2.gangui-1.html">
+            <h2>AI 프로그래밍 입문</h2>
+        </a>
+        <p>임성택 교수님</p>
+        <p>웹 프로그래밍의 기초 과정으로 우리 일상과 밀접한 관계를 맺고 있는 인터넷 및 웹(web)을 이해한다. 웹 표준 기술인 HTML5와 CSS3와 자바스크립트의 기본 개념을 배우며 실습 예제 및 과제 수행을 통해 웹 프로그램 작성능력을 배양한다.</p>
+    </div>
+
+    <!-- 두 번째 강의 섹션 -->
+    <div class="courseBox" id="course2">
+        <a href="0.3.2.gangui-2.html">
+            <h2>소프트웨어 수학</h2>
+        </a>
+        <p>안종현 교수님</p>
+        <p>Mathematics forms the mathematical foundation of computer and information science. This course teaches the students techniques in how to think mathematically and logically and apply these techniques in solving problems. Students will learn a particular set of mathematical facts and how to apply them.</p>
+    </div>
+
+    <!-- 세 번째 강의 섹션 -->
+    <div class="courseBox" id="course3">
+        <a href="0.3.2.gangui-3.html">
+            <h2>프로그래밍 기초</h2>
+        </a>
+        <p>최한옥 교수님</p>
+        <p>This course is to learn the basic skills of C programming and simple problem solving. Topics will be covered by the combination of theory lectures and lab sessions.</p>
+    </div>
+
+    <!-- 네 번째 강의 섹션 -->
+    <div class="courseBox" id="course4">
+        <a href="0.3.2.gangui-4.html">
+            <h2>Colleage english</h2>
+        </a>
+        <p>Amy Redding 교수님</p>
+        <p>College English is a course that is taken over the course of two semesters during a student's freshman year. This course will focus on the use of English in class and outside of the classroom. Group work is essential and willingness to participate will contribute to improvements in English abilities.</p>
+    </div>
+
+    <!-- 강의 평가 버튼 -->
+    <div id="reviewButtonContainer">
+        <a href="0.3.3.gangu.html">
+            <button>강의 평가</button>
+        </a>
+    </div>
+</div>
+
+<script>
+    // 검색을 처리하는 함수
+    function search() {
+        var input = document.getElementById('searchInput').value.toLowerCase();
+        var boxes = document.getElementsByClassName('courseBox');
+        
+        for (var i = 0; i < boxes.length; i++) {
+            var courseName = boxes[i].getElementsByTagName('h2')[0].innerText.toLowerCase();
+            
+            // 검색어가 강의명에 포함되면 해당 섹션을 표시하고, 포함되지 않으면 숨김
+            if (courseName.includes(input)) {
+                boxes[i].style.display = 'block';
+            } else {
+                boxes[i].style.display = 'none';
+            }
+        }
+    }
+
+    // 검색 창의 입력값이 변경될 때마다 검색 함수 호출
+    document.getElementById('searchInput').addEventListener('input', search);
+</script>
+
+</body>
+</html>
